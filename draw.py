@@ -1,4 +1,4 @@
-"""TODO(Rich): Add documentation.
+"""http://codegolf.stackexchange.com/questions/22144/images-with-all-colors.
 """
 
 from __future__ import division
