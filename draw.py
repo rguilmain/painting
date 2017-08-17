@@ -88,7 +88,7 @@ def get_best_point(points, color, picture):
   min_difference = sys.maxint
   for point in points:
     for neighbor in get_neighbors(point, picture):
-      if not neighbor.color:
+      if neighbor.color is None:
         continue
       difference = error(color, neighbor.color)
       if difference < min_difference:
@@ -138,7 +138,7 @@ def main(argv=None):
                      (100 * num_pixels_drawn / num_pixels))
     available_points.remove(best_point)
     for neighbor in get_neighbors(best_point, picture):
-      if not neighbor.color:
+      if neighbor.color is None:
         available_points.add(neighbor)
 
   print "\nTotal running time: {} seconds.".format(time.time() - start_time)
