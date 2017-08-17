@@ -6,7 +6,6 @@ from PIL import Image
 
 import argparse
 import math
-import multiprocessing
 import random
 import sys
 import time
