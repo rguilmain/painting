@@ -101,9 +101,9 @@ def main(argv=None):
     sys.argv = argv
 
   parser = argparse.ArgumentParser(description=__doc__)
-  parser.add_argument("-x", "--x-size", default=100, type=int,
+  parser.add_argument("-x", "--x-size", default=256, type=int,
                       help="x dimension")
-  parser.add_argument("-y", "--y-size", default=50, type=int,
+  parser.add_argument("-y", "--y-size", default=128, type=int,
                       help="y dimension")
   parser.add_argument("-n", "--num-starbursts", default=1, type=int,
                       help="number of starbursts to grow")
