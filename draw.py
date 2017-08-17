@@ -42,9 +42,6 @@ class Picture(object):
         column.append(Point(x, y))
       self.points.append(column)
 
-  def get_point(self, x, y):
-    return self.points[x][y]
-
   def paint(self, point, color):
     self.pixels[point.x, point.y] = (color.r, color.g, color.b)
     point.color = color
@@ -63,7 +60,7 @@ def get_neighbors(point, picture):
         continue
       if x < 0 or x >= picture.x_size or y < 0 or y >= picture.y_size:
         continue
-      yield picture.get_point(x, y)
+      yield picture.points[x][y]
 
 
 def get_colors(num_colors):
@@ -120,9 +117,9 @@ def main(argv=None):
 
   starting_points = set()
   for starburst in range(args.num_starbursts):
-    starting_points.add(picture.get_point(
-      random.randint(0, picture.x_size - 1),
-      random.randint(0, picture.y_size - 1)))
+    starburst_x = random.randint(0, picture.x_size - 1)
+    starburst_y = random.randint(0, picture.y_size - 1)
+    starting_points.add(picture.points[starburst_x][starburst_y])
 
   available_points = set()
   for starting_point in starting_points:
