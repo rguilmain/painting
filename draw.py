@@ -65,7 +65,7 @@ def get_neighbors(point, picture):
 
 def get_colors(num_colors):
   colors = []
-  num_partitions = int(num_colors**(1 / 3)) + 1
+  num_partitions = int(math.ceil(num_colors**(1 / 3)))
   for r in range(num_partitions):
     for g in range(num_partitions):
       for b in range(num_partitions):
